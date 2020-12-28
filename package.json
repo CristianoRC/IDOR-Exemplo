@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "api": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
     "express": "^4.17.1",
     "pino": "^6.8.0",
     "pino-pretty": "^4.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }
