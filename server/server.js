@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const logger = require("./logger")
 const homeController = require("../controllers/homeController")
 const authController = require("../controllers/authController")
-const investimetnController = require("../controllers/investiments");
+const investimetnController = require("../controllers/investimentsController");
 
 const configureEnvironmentVariables = () => {
     const dotenv = require("dotenv");

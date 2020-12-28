@@ -1,6 +1,7 @@
-const router = express.Router();
-const { StatusCodes } = require("http-status-codes")
 const express = require('express');
+const router = express.Router();
+
+const { StatusCodes } = require("http-status-codes")
 const authMiddleware = require("../server/AuthMiddleware")
 
 

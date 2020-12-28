@@ -1,9 +1,15 @@
 const { StatusCodes } = require("http-status-codes")
-const authService = require("../services/authService")
+const { tokenIsValid } = require("../services/authService")
 
 const authMiddleware = (request, response, next) => {
-    response.status(StatusCodes.UNAUTHORIZED).send();
-    next();
+    const authHeader = request.headers["authorization"];
+    const token = authHeader?.split(' ')[1] ?? null;
+
+    if (tokenIsValid(token) === true)
+        next();
+    else
+        response.status(StatusCodes.UNAUTHORIZED).send();
+
 }
 
 module.exports = authMiddleware;
