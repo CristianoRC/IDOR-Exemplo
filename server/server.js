@@ -4,6 +4,8 @@ const bodyParser = require('body-parser')
 const logger = require("./logger")
 const homeController = require("../controllers/homeController")
 const authController = require("../controllers/authController")
+const investimetnController = require("../controllers/investiments");
+
 const configureEnvironmentVariables = () => {
     const dotenv = require("dotenv");
     dotenv.config();
@@ -18,6 +20,7 @@ const startServer = (port) => {
 
     app.use(authController);
     app.use(homeController);
+    app.use(investimetnController);
 
     app.listen(port, () => {
         logger.info(`Servidor rodando na portar ${port} - http://localhost:${port}/`);
