@@ -10,7 +10,7 @@ const authenticateUser = (login, password) => {
 
 
 const generateJWT = (userId) => {
-    return jwt.sign({ userId }, process.env.TOKEN_SECRET, { expiresIn: "1800s" })
+    return jwt.sign({ id: userId }, process.env.TOKEN_SECRET, { expiresIn: "1800s" })
 }
 
 const tokenIsValid = (token) => {
