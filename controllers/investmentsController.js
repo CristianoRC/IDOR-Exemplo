@@ -3,16 +3,16 @@ const router = express.Router();
 
 const { StatusCodes } = require("http-status-codes")
 const authMiddleware = require("../server/middlewares/AuthMiddleware")
-const { getInvestimens } = require("../services/investimentService")
+const { getInvestimens } = require("../services/investmentService")
 
-router.get("/investiment/:id", authMiddleware, (request, response) => {
+router.get("/investment/:id", authMiddleware, (request, response) => {
     const userId = request.params.id;
-    const investiments = getInvestimens(userId);
+    const investments = getInvestimens(userId);
 
-    if (investiments === undefined)
+    if (investments === undefined)
         return response.status(StatusCodes.NO_CONTENT).send();
 
-    return response.status(StatusCodes.OK).json(investiments)
+    return response.status(StatusCodes.OK).json(investments)
 })
 
 module.exports = router;

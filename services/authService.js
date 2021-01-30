@@ -4,7 +4,7 @@ const logger = require("../server/logger")
 
 const authenticateUser = (login, password) => {
     if (login === "abc" && password === "123")
-        return new AuthResponse(true, generateJWT(1));
+        return new AuthResponse(true, generateJWT(100));
     return new AuthResponse(false, "Login ou senha inválidos");
 }
 
