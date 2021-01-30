@@ -1,12 +1,13 @@
 const getInvestimens = (userId) => {
-    const investments = [{ userId: 101, value: 5000 }, { userId: 103, value: -500 }, { userId: 100, value: 0 }];
-    return investments.find(investment => investment.userId === Number(userId));
+
+    const investments = [
+        { userId: '392ce4f3-4cf7-4c38-af97-d7a319cfb350', value: 5000 },
+        { userId: 'ed364d2d-4151-46aa-80e2-d22288d2c7a0', value: -500 }
+    ];
+    return investments.find(investment => investment.userId === userId);
+
 }
 
-// const userCanAccessInvestment = (userId, targetId) => {
-//     const permissions = [{ userId: 100, targets: [100, 103] }]
 
-//     return permissions.find(x => x.userId == userId).targets.some(x => x === targetId);
-// }
 
 module.exports = { getInvestimens }

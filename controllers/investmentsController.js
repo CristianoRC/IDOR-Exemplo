@@ -7,12 +7,13 @@ const { getInvestimens } = require("../services/investmentService")
 
 router.get("/investment/:id", authMiddleware, (request, response) => {
     const userId = request.params.id;
-    const investments = getInvestimens(userId);
+    const investmentsResult = getInvestimens(userId);
 
-    if (investments === undefined)
+    console.log(investmentsResult);
+    if (investmentsResult === undefined)
         return response.status(StatusCodes.NO_CONTENT).send();
 
-    return response.status(StatusCodes.OK).json(investments)
+    return response.status(StatusCodes.OK).json(investmentsResult)
 })
 
 module.exports = router;
